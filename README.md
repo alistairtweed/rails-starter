@@ -82,4 +82,4 @@
 - [ ] Gemfile
 - [ ] Gemfile.lock
 - [ ] Rakefile
-- [ ] README.md
+- [x] README.md
