@@ -6,9 +6,20 @@ export default {
     "./app/views/**/*.html.erb"
   ],
   theme: {
+    container: {
+      center: true
+    },
     extend: {
       fontFamily: {
-        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: "inherit",
+            maxWidth: "100%"
+          }
+        }
       }
     }
   },
@@ -19,6 +30,8 @@ export default {
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/container-queries"),
     require("@tailwindcss/forms")({ strategy: "class" }),
-    require("@tailwindcss/typography")
+    require("@tailwindcss/typography")({
+      className: "Typography"
+    })
   ]
 }

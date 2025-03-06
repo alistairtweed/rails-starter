@@ -1,0 +1,64 @@
+<div class="py-8">
+  <div class="Container">
+    <div class="Typography">
+      <h1>UI Documentation</h1>
+      <h2>Forms</h2>
+      <div class="Card bg-gray-50">
+        <%= form_with url: "#", builder: CustomFormBuilder do |form| %>
+          <div class="space-y-2">
+            <div>
+              <div><%= form.label :text %></div>
+              <div><%= form.text_field :text %></div>
+            </div>
+            <div>
+              <div><%= form.label :textarea %></div>
+              <div><%= form.text_area :textarea, "x-data": "AutosizeTextarea" %></div>
+            </div>
+            <div>
+              <div><%= form.label :email %></div>
+              <div><%= form.email_field :email %></div>
+            </div>
+            <div>
+              <div><%= form.label :password %></div>
+              <div><%= form.password_field :password %></div>
+            </div>
+            <div>
+              <div><%= form.label :date %></div>
+              <div><%= form.date_field :date, class: "w-full" %></div>
+            </div>
+            <div>
+              <div><%= form.label :datetime %></div>
+              <div><%= form.datetime_field :datetime, class: "w-full" %></div>
+            </div>
+            <div>
+              <div><%= form.label :select %></div>
+              <div><%= form.select :select, [["Option 1", 1], ["Option 2", 2], ["Option 3", 3]], {}, class: "w-full" %></div>
+            </div>
+            <div>
+              <div><%= form.label nil, "Checkbox" %></div>
+              <div><%= form.check_box :checkbox, label: "Checkbox" %></div>
+            </div>
+            <div>
+              <div><%= form.label nil, "Checkboxes" %></div>
+              <%= form.multi_check_box :checkboxes, [["Option 1", 1], ["Option 2", 2], ["Option 3", 3]] %>
+            </div>
+            <div>
+              <div><%= form.label nil, "Radio" %></div>
+              <div><%= form.radio_button :radio, :radio_1, label: "Radio 1" %></div>
+              <div><%= form.radio_button :radio, :radio_2, label: "Radio 2" %></div>
+              <div><%= form.radio_button :radio, :radio_3, label: "Radio 3" %></div>
+            </div>
+            <div>
+              <div><%= form.label :file %></div>
+              <div><%= form.file_field :file %></div>
+            </div>
+          </div>
+          <div class="mt-8 flex items-center gap-2">
+            <div><%= form.submit "Submit" %></div>
+            <div><%= form.reset_button %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
