@@ -24,5 +24,7 @@ module RailsStarter
     config.load_defaults 7.2
 
     config.autoload_lib ignore: ["assets", "tasks"]
+
+    config.paths["config/database"].unshift "#{Rails.root}/config/database.yml.local"
   end
 end
