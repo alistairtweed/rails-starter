@@ -23,7 +23,16 @@ module RailsStarter
   class Application < Rails::Application
     config.load_defaults 7.2
 
-    config.autoload_lib ignore: ["assets", "tasks"]
+    config.autoload_lib ignore: ["assets", "tasks", "templates"]
+
+    config.generators do |c|
+      c.factory_bot false
+      c.helper false
+      c.request_specs false
+      c.resource_route false
+      c.routing_specs false
+      c.view_specs false
+    end
 
     config.paths["config/database"].unshift "#{Rails.root}/config/database.yml.local"
   end
